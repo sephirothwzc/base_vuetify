@@ -24,7 +24,8 @@ import {
   VTextField,
   VSelect,
   VDatePicker,
-  VSubheader
+  VSubheader,
+  VDataTable
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 import i18n from './i18n/index'
@@ -59,7 +60,8 @@ Vue.use(Vuetify, {
     VTextField,
     VSelect,
     VDatePicker,
-    VSubheader
+    VSubheader,
+    VDataTable
   },
   theme: {
     // primary: '#ee44aa',

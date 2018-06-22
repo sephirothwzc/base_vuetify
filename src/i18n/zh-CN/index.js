@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-22 10:57:05
+ * @Last Modified time: 2018-06-22 16:00:23
  */
 export default {
   // region 主页
@@ -29,6 +29,9 @@ export default {
   enableFlag: '有效',
   remark: '备注',
   querySubheader: '查询条件',
+  queryResult: '查询结果',
+  query: '查询',
+  rest: '重置',
   // endregion common
   // region navigation
   DataDictionary: '数据字典',
@@ -39,6 +42,7 @@ export default {
   UserSave: '新增用户',
   PR: '合同准备',
   LargeContractTypeSave: '合同大类创建',
+  LargeContractTypeQuery: '合同大类查询',
   SmallContractTypeSave: '合同小类创建',
   // endregion navigation
   // model base

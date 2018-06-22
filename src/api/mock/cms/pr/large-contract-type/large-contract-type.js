@@ -1,13 +1,13 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-21 16:38:53
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-21 23:45:42
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-22 16:13:44
  * 合同大类
  */
 import Mock from 'mockjs'
 
-Mock.mock('/large-contract-type', 'post', param => {
+Mock.mock('/LargeContractType', 'post', param => {
   console.log('新增：' + JSON.stringify(param))
   return param
 })
@@ -24,7 +24,7 @@ Mock.mock('/large-contract-type', 'post', param => {
 //   }
 // })
 
-Mock.mock('/large-contract-type', 'put', param => {
+Mock.mock('/LargeContractType', 'put', param => {
   console.log('修改：' + JSON.stringify(param))
   return param
 })
@@ -43,7 +43,7 @@ const getLargeContractType = function() {
   }]
 }
 
-Mock.mock('/large-contract-type', 'get', param => {
+Mock.mock('/LargeContractType', 'get', param => {
   console.log('查询：' + JSON.stringify(param))
   return getLargeContractType()
 })

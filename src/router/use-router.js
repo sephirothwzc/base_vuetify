@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-05-30 15:30:49
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-21 17:10:26
+ * @Last Modified time: 2018-06-22 12:14:39
  * 导航数据源
  */
 import Main from '../components/layout/Main'
@@ -56,6 +56,11 @@ const useRouter = [{
     name: 'SmallContractTypeSave',
     component: () =>
       import('../components/cms/pr/small-contract-type/SmallContractTypeSave')
+  }, {
+    path: 'large-contract-type-query',
+    name: 'LargeContractTypeQuery',
+    component: () =>
+      import('../components/cms/pr/large-contract-type/LargeContractTypeQuery')
   }]
 }]
 

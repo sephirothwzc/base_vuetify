@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-21 10:50:03
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-21 23:32:43
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-22 16:14:34
  */
 import ApiBase from '../../../../../base-helper/api-base'
 /**
@@ -14,6 +14,6 @@ import ApiBase from '../../../../../base-helper/api-base'
  */
 export default class RestfulLargeContractType extends ApiBase {
   constructor() {
-    super('/large-contract-type/')
+    super('/LargeContractType/')
   }
 }

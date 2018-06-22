@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-21 20:31:03
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-22 12:22:04
  * mock layout
  */
 
@@ -74,6 +74,13 @@ Mock.mock('/layout/navigation', 'get', param => {
           pid: 7,
           name: 'LargeContractTypeSave',
           patch: 'large-contract-type-save',
+          icon: 'perm_identity'
+        },
+        {
+          id: 10,
+          pid: 7,
+          name: 'LargeContractTypeQuery',
+          patch: 'large-contract-type-query',
           icon: 'perm_identity'
         },
         {
