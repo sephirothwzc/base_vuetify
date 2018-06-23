@@ -2,12 +2,11 @@
  * @Author: 武彩平
  * @Date: 2018-06-21 15:31:57
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-21 23:44:19
+ * @Last Modified time: 2018-06-22 12:21:19
  * 合同小类 save
  */
 import Property from '../../../property'
 import RestfulSmallContractType from '../../../../api/restful/cms/pr/small-contract-type/restful-small-contract-type'
-// import RestfulLargeContractType from '../../../../api/restful/cms/pr/small-contract-type/restful-small-contract-type'
 import ModelBase from '../../../../base-helper/model-base'
 import { ConstFormType, ConstValidate } from '../../../const-name'
 import TextAttribute from '../../../attribute/text-attribute'
@@ -15,20 +14,20 @@ import SelAttribute from '../../../attribute/sel-attribute'
 import RestfulLargeContractType from '../../../../api/restful/cms/pr/large-contract-type/restful-large-contract-type'
 import getSingleton from '../../../../design-pattern/singleton'
 /**
- * 部门工厂
+ * 合同大类工厂
  */
 const largeContractTypeServices = getSingleton(function() {
   return new RestfulLargeContractType()
 })
 
 /**
- * 合同小类VC
+ * 合同小类VM
  *
  * @export
  * @class SmallContctTypeSaveVC
  * @extends
  */
-export default class SmallContractTypeSaveVC extends ModelBase {
+export default class SmallContractTypeSaveVM extends ModelBase {
   constructor() {
     super(function() {
       return new RestfulSmallContractType()
@@ -101,12 +100,14 @@ export default class SmallContractTypeSaveVC extends ModelBase {
     })
     ctLargeType.SelAttribute.GetAsync = async function(val) {
       ctLargeType.SelAttribute.Loading = true
-      ctProDepartment.SelAttribute.Items = await largeContractTypeServices().get(val)
+      ctProDepartment.SelAttribute.Items = await largeContractTypeServices().get(
+        val
+      )
       ctLargeType.SelAttribute.Loading = false
     }
     this.ctLargeType = ctLargeType
     // #endregion ctLargeType 合同大类
-    // #region ctProDepartment  所属机构
+    // #region ctProDepartment  所属机构TODO
     let ctProDepartment = new Property({
       name: 'ctProDepartment',
       rules: [
@@ -127,16 +128,41 @@ export default class SmallContractTypeSaveVC extends ModelBase {
     })
     ctProDepartment.SelAttribute.GetAsync = async function(val) {
       ctProDepartment.SelAttribute.Loading = true
-      // ctProDepartment.SelAttribute.Items = await sysDepartmentServices().getSysDepartmentSelect(val)
+      // todo ctProDepartment.SelAttribute.Items = await sysDepartmentServices().getSysDepartmentSelect(val)
       ctProDepartment.SelAttribute.Loading = false
     }
     this.ctProDepartment = ctProDepartment
     // #endregion ctProDepartment 所属机构
     // #region enableFlag 是否有效
+    // #region enableFlag 是否有效
     this.enableFlag = new Property({
-      name: 'enableFlag'
+      name: 'enableFlag',
+      type: ConstFormType.SELECTS,
+      defaultValue: 1,
+      selAttribute: new SelAttribute({
+        items: [
+          {
+            value: 1,
+            text: window.vm.$t('true')
+          },
+          {
+            value: 0,
+            text: window.vm.$t('false')
+          }
+        ]
+      })
     })
     // #endregion enableFlag 是否有效
+    // #endregion enableFlag 是否有效
+    // #region memo 备注
+    this.memo = new Property({
+      name: 'memo',
+      textAttribute: new TextAttribute({
+        counter: 200,
+        textarea: true
+      })
+    })
+    // #endregion memo 备注
     // #endregion 对象属性初始化
   }
 }

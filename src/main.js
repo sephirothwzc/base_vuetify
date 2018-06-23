@@ -25,7 +25,8 @@ import {
   VSelect,
   VDatePicker,
   VSubheader,
-  VDataTable
+  VDataTable,
+  VCheckbox
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 import i18n from './i18n/index'
@@ -61,7 +62,8 @@ Vue.use(Vuetify, {
     VSelect,
     VDatePicker,
     VSubheader,
-    VDataTable
+    VDataTable,
+    VCheckbox
   },
   theme: {
     // primary: '#ee44aa',

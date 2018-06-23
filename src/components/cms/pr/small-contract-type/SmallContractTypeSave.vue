@@ -4,7 +4,7 @@
 
 <script>
 import FormEdit from '../../../layout/FormEdit.vue'
-import SmallContractTypeSaveVC from '../../../../model/cms/pr/small-contract-type/small-contract-type-save-vc.js'
+import SmallContractTypeSaveVM from '../../../../model/cms/pr/small-contract-type/small-contract-type-save-vm.js'
 /**
  * 合同小类新增、修改
  */
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      formModel: new SmallContractTypeSaveVC()
+      formModel: new SmallContractTypeSaveVM()
     }
   }
 }

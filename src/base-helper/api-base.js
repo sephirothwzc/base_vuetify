@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-11 15:21:07
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-21 17:03:29
+ * @Last Modified time: 2018-06-23 18:21:58
  * api 请求父类 CRUD
  */
 
@@ -46,7 +46,7 @@ export default class ApiBase {
    * @memberof ApiBase
    */
   get(urlParam) {
-    return axios.get(`/${this.restfulClass}`, {
+    return axios.get(`${this.restfulClass}`, {
       params: urlParam
     })
   }
@@ -58,7 +58,7 @@ export default class ApiBase {
    * @memberof ApiBase
    */
   getById(id) {
-    return axios.get(`/${this.restfulClass}/${id}`)
+    return axios.get(`${this.restfulClass}/${id}`)
   }
   /**
    * Post请求用于新增
@@ -71,7 +71,7 @@ export default class ApiBase {
     if (!dataParam) {
       throw new Error(`wzc-ApiBase-post:[${this.restfulClass}] dataParam mast not undefined、null！`)
     }
-    return axios.post(`/${this.restfulClass}`, dataParam)
+    return axios.post(`${this.restfulClass}`, dataParam)
   }
   /**
    * Put请求用于修改
@@ -84,7 +84,7 @@ export default class ApiBase {
     if (!dataParam) {
       throw new Error(`wzc-ApiBase-put:[${this.restfulClass}] dataParam mast not undefined、null！`)
     }
-    return axios.put(`/${this.restfulClass}`, dataParam)
+    return axios.put(`${this.restfulClass}`, dataParam)
   }
   /**
    * Delete请求用于删除
@@ -97,13 +97,13 @@ export default class ApiBase {
     if (!delParam) {
       throw new Error(`wzc-ApiBase-delete:[${this.restfulClass}] delParam mast [array] or [string] or [object json]！`)
     }
-    let url = `/${this.restfulClass}`
+    let url = `${this.restfulClass}`
     if (delParam instanceof Array) {
       url += `/${delParam.join()}`
     } else if (delParam instanceof String) {
-      url += `/${delParam}`
+      url += `${delParam}`
     } else {
-      url += `/${JSON.stringify(delParam)}`
+      url += `${JSON.stringify(delParam)}`
     }
     return axios.delete(url)
   }
@@ -118,6 +118,6 @@ export default class ApiBase {
     if (!dataParam) {
       throw new Error(`wzc-ApiBase-delete:[${this.restfulClass}] delParam mast [array] or [string] or [object json]！`)
     }
-    return axios.delete(`/${this.restfulClass}`, {params: dataParam})
+    return axios.delete(`${this.restfulClass}`, {params: dataParam})
   }
 }

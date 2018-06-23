@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-22 11:50:53
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-22 15:13:29
+ * @Last Modified time: 2018-06-23 18:04:47
  * 合同大类查询
  */
 import Property from '../../../property'
@@ -11,6 +11,7 @@ import RestfulLargeContractType from '../../../../api/restful/cms/pr/large-contr
 import { ConstFormType } from '../../../const-name'
 import SelAttribute from '../../../attribute/sel-attribute'
 import QueryTable from '../../../query-table'
+import TableColumn from '../../../table-column'
 
 /**
  * 合同大类查询
@@ -60,20 +61,25 @@ export default class LargeContractTypeQueryVM extends ModelBase {
     // #endregion enableFlag 是否有效
     // #region queryTable
     this.queryTable = new QueryTable({
+      key: 'ctTypeId',
       headers: [
-        {
-          text: window.vm.$t('ctTypeCode'),
-          value: 'ctTypeCode'
-        }, {
-          text: window.vm.$t('ctTypeName'),
-          value: 'ctTypeName'
-        }, {
-          text: window.vm.$t('shortName'),
-          value: 'shortName'
-        }, {
-          text: window.vm.$t('enableFlag'),
-          value: 'enableFlag'
-        }
+        new TableColumn({
+          title: window.vm.$t('ctTypeCode'),
+          align: 'center',
+          field: 'ctTypeCode'
+        }), new TableColumn({
+          title: window.vm.$t('ctTypeName'),
+          align: 'center',
+          field: 'ctTypeName'
+        }), new TableColumn({
+          title: window.vm.$t('shortName'),
+          align: 'center',
+          field: 'shortName'
+        }), new TableColumn({
+          title: window.vm.$t('enableFlag'),
+          align: 'center',
+          field: 'enableFlag'
+        })
       ]
     })
     // #endregion queryTable
