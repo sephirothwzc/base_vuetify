@@ -4,9 +4,9 @@
 
 <script>
 import FormEdit from '../../../layout/FormEdit'
-import SmallContractTypeSaveVM from '../../../../model/cms/pr/small-contract-type/small-contract-type-save-vm'
+import TermTypeSaveVM from '../../../../model/cms/pr/term-type/term-type-save-vm'
 /**
- * 合同小类新增、修改
+ * 条款类型新增、修改
  */
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      formModel: new SmallContractTypeSaveVM()
+      formModel: new TermTypeSaveVM()
     }
   }
 }

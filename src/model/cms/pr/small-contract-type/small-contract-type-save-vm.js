@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-21 15:31:57
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-22 12:21:19
+ * @Last Modified time: 2018-06-23 10:34:25
  * 合同小类 save
  */
 import Property from '../../../property'
@@ -24,7 +24,7 @@ const largeContractTypeServices = getSingleton(function() {
  * 合同小类VM
  *
  * @export
- * @class SmallContctTypeSaveVC
+ * @class SmallContctTypeSaveVM
  * @extends
  */
 export default class SmallContractTypeSaveVM extends ModelBase {
@@ -134,7 +134,6 @@ export default class SmallContractTypeSaveVM extends ModelBase {
     this.ctProDepartment = ctProDepartment
     // #endregion ctProDepartment 所属机构
     // #region enableFlag 是否有效
-    // #region enableFlag 是否有效
     this.enableFlag = new Property({
       name: 'enableFlag',
       type: ConstFormType.SELECTS,
@@ -152,7 +151,6 @@ export default class SmallContractTypeSaveVM extends ModelBase {
         ]
       })
     })
-    // #endregion enableFlag 是否有效
     // #endregion enableFlag 是否有效
     // #region memo 备注
     this.memo = new Property({

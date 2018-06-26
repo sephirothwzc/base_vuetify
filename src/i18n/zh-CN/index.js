@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-22 16:00:23
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-23 15:29:24
  */
 export default {
   // region 主页
@@ -44,6 +44,9 @@ export default {
   LargeContractTypeSave: '合同大类创建',
   LargeContractTypeQuery: '合同大类查询',
   SmallContractTypeSave: '合同小类创建',
+  SmallContractTypeQuery: '合同小类查询',
+  TermTypeSave: '条款类型创建',
+  TermTypeQuery: '条款类型查询',
   // endregion navigation
   // model base
   lastUpdate: '最后修改时间',
@@ -60,10 +63,14 @@ export default {
   ctTypeName: '名称',
   shortName: '简称',
   // #endregion LargeContractTypeSave
-   // #region SmallContractTypeSave
+  // #region SmallContractTypeSave
   ctLargeType: '合同大类',
-  ctProDepartment: '所属部门',
-   // #endregion SmallContractTypeSave
+  ctProDepartment: '所属机构',
+  // #endregion SmallContractTypeSave
+  // #region SmallContractTypeSave
+  termTypeCode: '编码',
+  termTypeName: '名称',
+  // #endregion SmallContractTypeSave
   // #region validate
   required: '必填项',
   maxLength: '长度超出'

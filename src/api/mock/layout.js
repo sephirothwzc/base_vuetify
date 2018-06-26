@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-22 12:22:04
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-23 11:45:16
  * mock layout
  */
 
@@ -88,6 +88,27 @@ Mock.mock('/layout/navigation', 'get', param => {
           pid: 7,
           name: 'SmallContractTypeSave',
           patch: 'small-contract-type-save',
+          icon: 'perm_identity'
+        },
+        {
+          id: 10,
+          pid: 7,
+          name: 'SmallContractTypeQuery',
+          patch: 'small-contract-type-query',
+          icon: 'perm_identity'
+        },
+        {
+          id: 11,
+          pid: 7,
+          name: 'TermTypeSave',
+          patch: 'term-type-save',
+          icon: 'perm_identity'
+        },
+        {
+          id: 12,
+          pid: 7,
+          name: 'TermTypeQuery',
+          patch: 'term-type-query',
           icon: 'perm_identity'
         }
       ]
