@@ -33,20 +33,18 @@
           <v-btn @click="btnQueryClick" v-text="$t('query')"></v-btn>
           <v-btn @click="btnRestClick" v-text="$t('rest')"></v-btn>
         </v-layout>
+        <v-layout row wrap>
+          <v-btn @click="btnAddClick" v-text="$t('add')"></v-btn>
+          <v-btn @click="btnUpdateClick" v-text="$t('update')"></v-btn>
+          <v-btn @click="btnExcelToClick" v-text="$t('excelTo')"></v-btn>
+        </v-layout>
       </v-container>
     </v-form>
     <v-subheader>{{ $t('queryResult') }}</v-subheader>
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 sm12 lg12 xl12>
-          <v-data-table :headers="tableHeaders" 
-          :items="desserts" 
-          :pagination.sync="pagination" 
-          :total-items="totalDesserts" 
-          :loading="loading" 
-          class="elevation-1" 
-          :item-key="queryModel.queryTable.Key"
-          v-model="selected">
+          <v-data-table :headers="tableHeaders" :items="desserts" :pagination.sync="pagination" :total-items="totalDesserts" :loading="loading" class="elevation-1" :item-key="queryModel.queryTable.Key" v-model="tbSelected">
             <template slot="items" slot-scope="props">
               <tr :active="props.selected" @click="props.selected = !props.selected">
                 <td>
@@ -66,6 +64,7 @@
 import { ConstFormType } from '../../model/const-name.js'
 import Property from '../../model/property.js'
 import jslinq from 'jslinq'
+import Dialog from '../../components/dialog/index'
 export default {
   props: {
     /**
@@ -105,7 +104,8 @@ export default {
       tableHeaders: [],
       // 列表列
       tableColumn: [],
-      selected: []
+      // 选中
+      tbSelected: []
     }
   },
   computed: {
@@ -134,7 +134,7 @@ export default {
         }
       })
       .toList()
-
+    // 处理表头增加选择列
     this.tableHeaders = [
       { text: '选择', value: this.queryModel.queryTable.Key, align: 'center' },
       ...tableheaders
@@ -182,12 +182,40 @@ export default {
         .finally(() => {
           this.loading = false
         })
-    }
+    },
+    /**
+     * 新增弹出按钮
+     */
+    btnAddClick() {
+      this.$router.push(this.queryModel.dialogSaveVM)
+    },
+    /**
+     * 修改弹出按钮
+     */
+    btnUpdateClick() {
+      if (this.tbSelected && this.tbSelected.length !== 1) {
+        return Dialog.messageShow({
+          title: this.$t('msgtitle'),
+          content: this.$t('updCheckError')
+        })
+      }
+      this.$router.push(`${this.queryModel.dialogSaveVM}/${this.tbSelected[0][this.queryModel.queryTable.key]}`)
+    },
+    btnExcelToClick() {}
   },
   watch: {
     pagination: {
       handler() {
-        if (!this.loading && this.pagination.page > 0) this.getDataFromApi()
+        if (this.loading || this.pagination.page === 0) return
+        this.getDataFromApi()
+      },
+      deep: true
+    },
+    // 选中 保持单选
+    tbSelected: {
+      handler() {
+        if (this.tbSelected.length <= 1) return
+        this.tbSelected = [jslinq(this.tbSelected).lastOrDefault()]
       },
       deep: true
     }

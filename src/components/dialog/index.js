@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-05-30 13:31:59
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-08 09:39:35
+ * @Last Modified time: 2018-06-26 14:35:55
  * 配置confirm dialog
  */
 import Vue from 'vue'
@@ -13,6 +13,7 @@ import MessageDialog from '../../components/dialog/MessageDialog'
 // import confirm from 'vuejs-modal/lib/confirm.vue'
 
 Vue.use(Modal, {
+  name: '$overallModal',
   modals: {
     confirm: ConfirmDialog, // 默认的模板
     message: MessageDialog
@@ -38,7 +39,7 @@ export default class Dialog {
     let btnCancelDisplay = type === 'YES' ? window.vm.$t('no') : window.vm.$t('cancel')
     let btnSubmitDisplay = type === 'YES' ? window.vm.$t('yes') : window.vm.$t('save')
     // return Promise $modal(vuejs-modal)
-    return window.vm.$modal.confirm({
+    return window.vm.$overallModal.confirm({
       title: title,
       content: content,
       btnSubmitDisplay,
@@ -53,7 +54,7 @@ export default class Dialog {
     title,
     content
   }) {
-    return window.vm.$modal.message({
+    return window.vm.$overallModal.message({
       title: title,
       content: content,
       btnCancelDisplay: window.vm.$t('yes')

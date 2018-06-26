@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-22 11:50:53
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-23 18:04:47
+ * @Last Modified time: 2018-06-26 16:02:48
  * 合同大类查询
  */
 import Property from '../../../property'
@@ -12,6 +12,7 @@ import { ConstFormType } from '../../../const-name'
 import SelAttribute from '../../../attribute/sel-attribute'
 import QueryTable from '../../../query-table'
 import TableColumn from '../../../table-column'
+// import LargeContractTypeSave from '../../../../components/cms/pr/large-contract-type/LargeContractTypeSave'
 
 /**
  * 合同大类查询
@@ -25,6 +26,8 @@ export default class LargeContractTypeQueryVM extends ModelBase {
     super(function() {
       return new RestfulLargeContractType()
     })
+    // 跳转新增修改
+    this.dialogSaveVM = '/pr/large-contract-type-save'
     // #region ctTypeCode 合同类型编码
     this.ctTypeCode = new Property({
       name: 'ctTypeCode'

@@ -135,6 +135,10 @@
         const sysDepartmentServices = getSingleton(function() {
           return new SysDepartment()
         })
+10. 判断    
+  判断均要求逆向方式 例：  
+   
+        if(this.selected) return
 
 #vue约定
 1. vue方法放置顺序

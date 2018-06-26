@@ -131,7 +131,8 @@ export default {
      * 取消事件
      */
     btnClearClick() {
-      this.$refs.form.reset()
+      // this.$refs.form.reset()
+      this.$router.go(-1)
     }
   },
   watch: {

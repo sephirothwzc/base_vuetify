@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-23 15:29:24
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-26 16:12:13
  */
 export default {
   // region 主页
@@ -32,6 +32,10 @@ export default {
   queryResult: '查询结果',
   query: '查询',
   rest: '重置',
+  add: '新增',
+  update: '修改',
+  excelTo: '导出',
+  updCheckError: '请至少选择一行数据进行修改！',
   // endregion common
   // region navigation
   DataDictionary: '数据字典',
