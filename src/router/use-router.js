@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-05-30 15:30:49
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-26 10:33:01
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-27 08:55:40
  * 导航数据源
  */
 import Main from '../components/layout/Main'
@@ -51,58 +51,72 @@ const useRouter = [
     component: Main,
     children: [
       {
-        path: 'large-contract-type-save',
-        name: 'LargeContractTypeSave',
+        path: 'contract-type-large-save',
+        name: 'ContractTypeLargeSave',
         component: () =>
-          import('../components/cms/pr/large-contract-type/LargeContractTypeSave')
+          import('../components/cms/pr/contract-type-large/ContractTypeLargeSave')
       },
       {
-        path: 'large-contract-type-save/:id',
-        name: 'LargeContractTypePut',
+        path: 'contract-type-large-save/:id',
+        name: 'ContractTypeLargePut',
         component: () =>
-          import('../components/cms/pr/large-contract-type/LargeContractTypeSave')
+          import('../components/cms/pr/contract-type-large/ContractTypeLargeSave')
       },
       {
-        path: 'small-contract-type-save',
-        name: 'SmallContractTypeSave',
+        path: 'contract-type-small-save',
+        name: 'ContractTypeSmallSave',
         component: () =>
-          import('../components/cms/pr/small-contract-type/SmallContractTypeSave')
+          import('../components/cms/pr/contract-type-small/ContractTypeSmallSave')
       },
       {
-        path: 'large-contract-type-query',
-        name: 'LargeContractTypeQuery',
+        path: 'contract-type-large-query',
+        name: 'ContractTypeLargeQuery',
         component: () =>
-          import('../components/cms/pr/large-contract-type/LargeContractTypeQuery')
+          import('../components/cms/pr/contract-type-large/ContractTypeLargeQuery')
       },
       {
-        path: 'small-contract-type-save/:id',
-        name: 'SmallContractTypePut',
+        path: 'contract-type-small-save/:id',
+        name: 'ContractTypeSmallPut',
         component: () =>
-          import('../components/cms/pr/small-contract-type/SmallContractTypeSave')
+          import('../components/cms/pr/contract-type-small/ContractTypeSmallSave')
       },
       {
-        path: 'small-contract-type-query/',
-        name: 'SmallContractTypeQuery',
+        path: 'contract-type-small-query/',
+        name: 'ContractTypeSmallQuery',
         component: () =>
-          import('../components/cms/pr/small-contract-type/SmallContractTypeQuery')
+          import('../components/cms/pr/contract-type-small/ContractTypeSmallQuery')
       },
       {
         path: 'term-type-save/',
         name: 'TermTypeSave',
-        component: () =>
-          import('../components/cms/pr/term-type/TermTypeSave')
+        component: () => import('../components/cms/pr/term-type/TermTypeSave')
       },
       {
         path: 'term-type-save/:id',
         name: 'TermTypePut',
-        component: () =>
-          import('../components/cms/pr/term-type/TermTypeSave')
+        component: () => import('../components/cms/pr/term-type/TermTypeSave')
       },
       {
         path: 'term-type-query/',
         name: 'TermTypeQuery',
-        component: () =>
-          import('../components/cms/pr/term-type/TermTypeQuery')
+        component: () => import('../components/cms/pr/term-type/TermTypeQuery')
+      }
+    ]
+  },
+  {
+    path: '/ar',
+    name: 'AR',
+    component: Main,
+    children: [
+      {
+        path: 'receive-contract-query/',
+        name: 'ReceiveContractQuery',
+        component: () => import('../components/cms/ar/receive-contract/ReceiveContractQuery')
+      },
+      {
+        path: 'loan-contract-query/',
+        name: 'LoanContractQuery',
+        component: () => import('../components/cms/ar/loan-contract/LoanContractQuery')
       }
     ]
   }

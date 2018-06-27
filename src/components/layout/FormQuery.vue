@@ -65,6 +65,7 @@ import { ConstFormType } from '../../model/const-name.js'
 import Property from '../../model/property.js'
 import jslinq from 'jslinq'
 import Dialog from '../../components/dialog/index'
+import UtilsHelper from '../../utils/utils-helper.js'
 export default {
   props: {
     /**
@@ -147,13 +148,38 @@ export default {
         }
       })
       .toList()
+    // 根据当前路由name查看是否有状态记录
+    this.pageStorageInit()
   },
   methods: {
+    /**
+     * 根据当前路由name查看是否有状态记录
+     */
+    async pageStorageInit() {
+      let params = UtilsHelper.getStorage(this.$router.currentRoute.name)
+      if (!params) return
+      this.queryObject = params.queryObject
+      this.$set(this.pagination, 'rowsPerPage', params.pagination.rowsPerPage)
+      this.$set(this.pagination, 'page', 1)
+    },
+    /**
+     * 查询前保存当前状态
+     */
+    async pageStorageSave() {
+      UtilsHelper.setStorage(this.$router.currentRoute.name, {
+        queryObject: this.queryObject,
+        pagination: this.pagination
+      })
+    },
     /**
      * 查询
      */
     async btnQueryClick() {
-      this.pagination.page = 1
+      if (this.pagination.page === 1) {
+        this.getDataFromApi()
+      } else {
+        this.pagination.page = 1
+      }
     },
     /**
      * 重置
@@ -174,6 +200,8 @@ export default {
         .then(resoult => {
           this.desserts = resoult.list
           this.totalDesserts = resoult.total
+          // 保存当前分页信息
+          this.pageStorageSave()
         })
         .catch(error => {
           console.log(error)
@@ -199,7 +227,11 @@ export default {
           content: this.$t('updCheckError')
         })
       }
-      this.$router.push(`${this.queryModel.dialogSaveVM}/${this.tbSelected[0][this.queryModel.queryTable.key]}`)
+      this.$router.push(
+        `${this.queryModel.dialogSaveVM}/${
+          this.tbSelected[0][this.queryModel.queryTable.key]
+        }`
+      )
     },
     btnExcelToClick() {}
   },

@@ -1,17 +1,17 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-22 11:50:53
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-26 16:02:48
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-27 09:55:11
  * 合同大类查询
  */
 import Property from '../../../property'
 import ModelBase from '../../../../base-helper/model-base'
-import RestfulLargeContractType from '../../../../api/restful/cms/pr/large-contract-type/restful-large-contract-type'
+import RestfulContractTypeLarge from '../../../../api/restful/cms/pr/contract-type-large/restful-contract-type-large'
 import { ConstFormType } from '../../../const-name'
-import SelAttribute from '../../../attribute/sel-attribute'
 import QueryTable from '../../../query-table'
 import TableColumn from '../../../table-column'
+import SelAttribute from '../../../attribute/sel-attribute'
 // import LargeContractTypeSave from '../../../../components/cms/pr/large-contract-type/LargeContractTypeSave'
 
 /**
@@ -24,10 +24,10 @@ import TableColumn from '../../../table-column'
 export default class LargeContractTypeQueryVM extends ModelBase {
   constructor() {
     super(function() {
-      return new RestfulLargeContractType()
+      return new RestfulContractTypeLarge()
     })
     // 跳转新增修改
-    this.dialogSaveVM = '/pr/large-contract-type-save'
+    this.dialogSaveVM = '/pr/contract-type-large-save'
     // #region ctTypeCode 合同类型编码
     this.ctTypeCode = new Property({
       name: 'ctTypeCode'
@@ -47,15 +47,14 @@ export default class LargeContractTypeQueryVM extends ModelBase {
     this.enableFlag = new Property({
       name: 'enableFlag',
       type: ConstFormType.SELECTS,
-      defaultValue: 1,
       selAttribute: new SelAttribute({
         items: [
           {
-            value: 1,
+            value: '1',
             text: window.vm.$t('true')
           },
           {
-            value: 0,
+            value: '0',
             text: window.vm.$t('false')
           }
         ]

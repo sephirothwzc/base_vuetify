@@ -4,7 +4,7 @@
 
 <script>
 import FormEdit from '../../../layout/FormEdit.vue'
-import LargeContractTypeSaveVM from '../../../../model/cms/pr/large-contract-type/large-contract-type-save-vm.js'
+import ContractTypeLargeSaveVM from '../../../../model/cms/pr/contract-type-large/contract-type-large-save-vm.js'
 /**
  * 合同大类新增、修改
  */
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      formModel: new LargeContractTypeSaveVM()
+      formModel: new ContractTypeLargeSaveVM()
     }
   }
 }

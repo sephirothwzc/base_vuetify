@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-23 10:46:21
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-23 15:40:53
+ * @Last Modified time: 2018-06-25 09:54:50
  */
 import ApiBase from '../../../../../base-helper/api-base'
 
@@ -15,6 +15,6 @@ import ApiBase from '../../../../../base-helper/api-base'
  */
 export default class RestfulTermType extends ApiBase {
   constructor() {
-    super('/TermType/')
+    super('TermType')
   }
 }

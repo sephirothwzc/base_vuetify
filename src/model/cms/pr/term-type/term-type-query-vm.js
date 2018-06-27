@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-23 11:47:02
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-23 15:20:44
+ * @Last Modified time: 2018-06-25 20:51:47
  */
 
 import ModelBase from '../../../../base-helper/model-base'
@@ -11,6 +11,7 @@ import Property from '../../../property'
 import SelAttribute from '../../../attribute/sel-attribute'
 import { ConstFormType } from '../../../const-name'
 import QueryTable from '../../../query-table'
+import TableColumn from '../../../table-column'
 
 /**
  *条款类型查询VM
@@ -61,23 +62,28 @@ export default class TermTypeQueryVM extends ModelBase {
     // #endregion memo 备注
     // #region queryTable
     this.queryTable = new QueryTable({
+      key: 'termTypeId',
       headers: [
-        {
-          text: window.vm.$t('termTypeCode'),
-          value: 'termTypeCode'
-        },
-        {
-          text: window.vm.$t('termTypeName'),
-          value: 'termTypeName'
-        },
-        {
-          text: window.vm.$t('enableFlag'),
-          value: 'enableFlag'
-        },
-        {
-          text: window.vm.$t('memo'),
-          value: 'memo'
-        }
+        new TableColumn({
+          title: window.vm.$t('termTypeCode'),
+          align: 'center',
+          field: 'termTypeCode'
+        }),
+        new TableColumn({
+          title: window.vm.$t('termTypeName'),
+          align: 'center',
+          field: 'termTypeName'
+        }),
+        new TableColumn({
+          title: window.vm.$t('enableFlag'),
+          align: 'center',
+          field: 'enableFlag'
+        }),
+        new TableColumn({
+          title: window.vm.$t('memo'),
+          align: 'center',
+          field: 'memo'
+        })
       ]
     })
     // #endregion queryTable

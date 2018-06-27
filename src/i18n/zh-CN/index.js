@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-26 16:12:13
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-27 09:14:48
  */
 export default {
   // region 主页
@@ -45,12 +45,15 @@ export default {
   UserManager: '用户管理',
   UserSave: '新增用户',
   PR: '合同准备',
-  LargeContractTypeSave: '合同大类创建',
-  LargeContractTypeQuery: '合同大类查询',
-  SmallContractTypeSave: '合同小类创建',
-  SmallContractTypeQuery: '合同小类查询',
+  ContractTypeLargeSave: '合同大类创建',
+  ContractTypeLargeQuery: '合同大类查询',
+  ContractTypeSmallSave: '合同小类创建',
+  ContractTypeSmallQuery: '合同小类查询',
   TermTypeSave: '条款类型创建',
   TermTypeQuery: '条款类型查询',
+  AR: '合同档案',
+  ReceiveContractQuery: '收件查询',
+  LoanContractQuery: '借阅查询',
   // endregion navigation
   // model base
   lastUpdate: '最后修改时间',
@@ -75,6 +78,18 @@ export default {
   termTypeCode: '编码',
   termTypeName: '名称',
   // #endregion SmallContractTypeSave
+  // #region ReceiveContract
+  ctCode: '合同编码',
+  ctName: '合同名称',
+  versionNo: '版本号',
+  archivesStatus: '档案状态',
+  lastReceiveUserName: '操作人',
+  createDate: '操作时间',
+  lastLoanUserName: '借阅人',
+  lastLoanDate: '借阅时间',
+  lastPlanReturnDate: '预计归还日期',
+  lastLoanTime: '借阅时长',
+  // #endregion ReceiveContract
   // #region validate
   required: '必填项',
   maxLength: '长度超出'

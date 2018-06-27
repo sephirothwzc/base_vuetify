@@ -4,7 +4,7 @@
 
 <script>
 import FromQuery from '../../../layout/FormQuery'
-import LargeContractTypeQueryVM from '../../../../model/cms/pr/large-contract-type/large-contract-type-query-vm'
+import ContractTypeLargeQueryVM from '../../../../model/cms/pr/contract-type-large/contract-type-large-query-vm'
 
 export default {
   components: {
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      queryModel: new LargeContractTypeQueryVM()
+      queryModel: new ContractTypeLargeQueryVM()
     }
   }
 }

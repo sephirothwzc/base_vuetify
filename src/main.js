@@ -101,4 +101,5 @@ router.afterEach((to, from) => {
     matched: to.matched,
     params: to.params
   })
+  // UtilsHelper.clear()
 })

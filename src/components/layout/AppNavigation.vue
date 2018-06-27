@@ -17,7 +17,7 @@
           </v-list-tile-content>
         </v-list-tile>
         <!-- <v-list-tile v-for="(citem, i) in item.children" :key="i" @click="listTitleClick(item, citem)"> -->
-        <v-list-tile v-for="(citem, i) in item.children" :key="i" :to="`${item.patch}/${citem.patch}`">
+        <v-list-tile v-for="(citem, i) in item.children" :key="i" :to="`${item.patch}/${citem.patch}`" @click="routerHelper">
           <v-list-tile-action>
             <v-icon v-html="citem.icon"></v-icon>
           </v-list-tile-action>
@@ -31,94 +31,100 @@
 </template>
 
 <style lang="" scoped>
-
 </style>
 
 <script>
-  import RestfulLayout from '../../api/restful/layout'
-  import getSingleton from '../../design-pattern/singleton.js'
-  const RestfulLayoutServices = getSingleton(function() {
-    return new RestfulLayout()
-  })
+import RestfulLayout from '../../api/restful/layout'
+import getSingleton from '../../design-pattern/singleton.js'
+import UtilsHelper from '../../utils/utils-helper'
+const RestfulLayoutServices = getSingleton(function() {
+  return new RestfulLayout()
+})
+/**
+ * 侧边栏导航
+ */
+export default {
+  props: {
+    miniVariant: {
+      type: Boolean,
+      required: true
+    },
+    clipped: {
+      type: Boolean,
+      required: true
+    },
+    drawer: {
+      type: Boolean,
+      required: true
+    }
+  },
   /**
-   * 侧边栏导航
+   * @description
+   * @returns {any}
    */
-  export default {
-    props: {
-      miniVariant: {
-        type: Boolean,
-        required: true
-      },
-      clipped: {
-        type: Boolean,
-        required: true
-      },
-      drawer: {
-        type: Boolean,
-        required: true
-      }
+  data() {
+    return {
+      /**
+       * 样式控制
+       */
+      dark: false,
+      toDrawer: true,
+      navItems: [
+        {
+          icon: 'bubble_chart',
+          title: '系统设置'
+        }
+      ]
+    }
+  },
+  mounted() {
+    RestfulLayoutServices()
+      .getNavigation()
+      .then(data => {
+        this.navItems = data
+      })
+  },
+  methods: {
+    /**
+     * @description 切换主题
+     */
+    changeDark() {
+      this.$emit('changeDark', this.dark)
+    },
+    /**
+     * @description 切换导航隐藏
+     */
+    changeDrawer() {
+      this.$emit('changeDrawer', this.toDrawer)
+    },
+    /**
+     * @description 导航点击事件
+     */
+    routerHelper() {
+      UtilsHelper.clear()
+      // 注释掉以前的手动跳转改为 ：to 为了 a 样式
+      // this.$router.push({
+      //   path: `${navItem.patch}/${childrenItem.patch}`
+      // })
+    }
+  },
+  watch: {
+    /**
+     * @description
+     * @param {any} val
+     * @param {any} oldval
+     */
+    toDrawer(val, oldval) {
+      this.changeDrawer()
     },
     /**
      * @description
-     * @returns {any}
+     * @param {any} val
+     * @param {any} oldval
      */
-    data() {
-      return {
-        /**
-         * 样式控制
-         */
-        dark: false,
-        toDrawer: true,
-        navItems: [{
-          icon: 'bubble_chart',
-          title: '系统设置'
-        }]
-      }
-    },
-    mounted() {
-      RestfulLayoutServices().getNavigation().then(data => {
-        this.navItems = data
-      })
-    },
-    methods: {
-      /**
-       * @description 切换主题
-       */
-      changeDark() {
-        this.$emit('changeDark', this.dark)
-      },
-      /**
-       * @description 切换导航隐藏
-       */
-      changeDrawer() {
-        this.$emit('changeDrawer', this.toDrawer)
-      },
-      /**
-       * @description 导航点击事件
-       */
-      listTitleClick(navItem, childrenItem) {
-        this.$router.push({
-          path: `${navItem.patch}/${childrenItem.patch}`
-        })
-      }
-    },
-    watch: {
-      /**
-       * @description
-       * @param {any} val
-       * @param {any} oldval
-       */
-      toDrawer(val, oldval) {
-        this.changeDrawer()
-      },
-      /**
-       * @description
-       * @param {any} val
-       * @param {any} oldval
-       */
-      drawer(val, oldval) {
-        this.toDrawer = val
-      }
+    drawer(val, oldval) {
+      this.toDrawer = val
     }
   }
+}
 </script>

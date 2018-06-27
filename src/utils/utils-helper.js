@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-04-26 09:39:34
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-04 12:53:58
+ * @Last Modified time: 2018-06-26 20:56:56
  * @document vue全局帮助类[localStorage]
  */
 
@@ -44,6 +44,15 @@ export default class UtilsHelper {
       return defaultValue
     }
     return JSON.parse(value)
+  }
+  /**
+   * 清空
+   *
+   * @static
+   * @memberof UtilsHelper
+   */
+  static clear() {
+    window.localStorage.clear()
   }
 }
 /**

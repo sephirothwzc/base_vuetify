@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-23 11:45:16
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-27 10:02:30
  * mock layout
  */
 
@@ -69,46 +69,70 @@ Mock.mock('/layout/navigation', 'get', param => {
       patch: '/pr',
       icon: 'assignment_ind',
       children: [
-        {
-          id: 8,
-          pid: 7,
-          name: 'LargeContractTypeSave',
-          patch: 'large-contract-type-save',
-          icon: 'perm_identity'
-        },
-        {
-          id: 10,
-          pid: 7,
-          name: 'LargeContractTypeQuery',
-          patch: 'large-contract-type-query',
-          icon: 'perm_identity'
-        },
-        {
-          id: 9,
-          pid: 7,
-          name: 'SmallContractTypeSave',
-          patch: 'small-contract-type-save',
-          icon: 'perm_identity'
-        },
+        // {
+        //   id: 8,
+        //   pid: 7,
+        //   name: 'ContractTypeLargeSave',
+        //   patch: 'contract-type-large-save',
+        //   icon: 'perm_identity'
+        // },
         {
           id: 10,
           pid: 7,
-          name: 'SmallContractTypeQuery',
-          patch: 'small-contract-type-query',
+          name: 'ContractTypeLargeQuery',
+          patch: 'contract-type-large-query',
           icon: 'perm_identity'
         },
+        // {
+        //   id: 9,
+        //   pid: 7,
+        //   name: 'ContractTypeSmallSave',
+        //   patch: 'contract-type-small-save',
+        //   icon: 'perm_identity'
+        // },
         {
-          id: 11,
+          id: 10,
           pid: 7,
-          name: 'TermTypeSave',
-          patch: 'term-type-save',
+          name: 'ContractTypeSmallQuery',
+          patch: 'contract-type-small-query',
           icon: 'perm_identity'
         },
+        // {
+        //   id: 11,
+        //   pid: 7,
+        //   name: 'TermTypeSave',
+        //   patch: 'term-type-save',
+        //   icon: 'perm_identity'
+        // },
         {
           id: 12,
           pid: 7,
           name: 'TermTypeQuery',
           patch: 'term-type-query',
+          icon: 'perm_identity'
+        }
+      ]
+    },
+    {
+      id: 13,
+      name: 'AR',
+      patch: '/ar',
+      icon: 'assignment_ind',
+      children: [
+        {
+          id: 14,
+          pid: 13,
+          title: '收件查询',
+          name: 'ReceiveContractQuery',
+          patch: 'receive-contract-query',
+          icon: 'perm_identity'
+        },
+        {
+          id: 15,
+          pid: 13,
+          title: '借阅查询',
+          name: 'LoanContractQuery',
+          patch: 'loan-contract-query',
           icon: 'perm_identity'
         }
       ]

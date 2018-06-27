@@ -2,11 +2,11 @@
  * @Author: 吴占超
  * @Date: 2018-06-21 10:31:57
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-22 11:07:52
+ * @Last Modified time: 2018-06-27 08:52:57
  * 合同大类 save
  */
 import Property from '../../../property'
-import RestfulLargeContractType from '../../../../api/restful/cms/pr/large-contract-type/restful-large-contract-type'
+import RestfulContractTypeLarge from '../../../../api/restful/cms/pr/contract-type-large/restful-contract-type-large'
 import ModelBase from '../../../../base-helper/model-base'
 import { ConstFormType, ConstValidate } from '../../../const-name'
 import TextAttribute from '../../../attribute/text-attribute'
@@ -19,10 +19,10 @@ import SelAttribute from '../../../attribute/sel-attribute'
  * @class LargeContractTypeSaveVC
  * @extends {ModelBase}
  */
-export default class LargeContractTypeSaveVM extends ModelBase {
+export default class ContractTypeLargeSaveVM extends ModelBase {
   constructor() {
     super(function() {
-      return new RestfulLargeContractType()
+      return new RestfulContractTypeLarge()
     })
     // #region 对象属性初始化
 
@@ -87,13 +87,13 @@ export default class LargeContractTypeSaveVM extends ModelBase {
     this.enableFlag = new Property({
       name: 'enableFlag',
       type: ConstFormType.SELECTS,
-      defaultValue: 1,
+      defaultValue: '1',
       selAttribute: new SelAttribute({
         items: [{
-          value: 1,
+          value: '1',
           text: window.vm.$t('true')
         }, {
-          value: 0,
+          value: '0',
           text: window.vm.$t('false')
         }]
       })

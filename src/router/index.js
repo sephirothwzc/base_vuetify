@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-04 14:10:32
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-14 13:17:13
+ * @Last Modified time: 2018-06-26 17:06:54
  * router 注册组件
  */
 import Vue from 'vue'
@@ -26,6 +26,7 @@ const routes = [{
 }, ...useRouter]
 
 const vueRouter = new Router({
+  // mode: 'history',
   routes
 })
 
