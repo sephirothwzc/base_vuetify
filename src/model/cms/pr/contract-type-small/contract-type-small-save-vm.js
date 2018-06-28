@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-21 15:31:57
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-27 09:52:18
+ * @Last Modified time: 2018-06-27 17:18:29
  * 合同小类 save
  */
 import Property from '../../../property'
@@ -91,7 +91,6 @@ export default class ContractTypeSmallSaveVM extends ModelBase {
       ],
       type: ConstFormType.SELECTS,
       selAttribute: new SelAttribute({
-        multiple: true,
         cacheItem: true,
         itemText: 'ctTypeCode',
         itemValue: 'ctTypeName'
@@ -100,18 +99,8 @@ export default class ContractTypeSmallSaveVM extends ModelBase {
     })
     ctLargeType.SelAttribute.GetAsync = async function(val) {
       ctLargeType.SelAttribute.Loading = true
-      let pageParam = {}
-      pageParam.ctTypeName = val
-      let param3 = {}
-      let arr1 = []
-      param3 = await contractTypeLargeServices().get(pageParam)
-      for (let i = 0; i < param3.list.length; i++) {
-        arr1.push({
-          text: param3.list[i].ctTypeCode,
-          value: param3.list[[i].ctTypeName]
-        })
-      }
-      ctLargeType.SelAttribute.Items = arr1
+      const vitems = await contractTypeLargeServices().get({ ctTypeName: val })
+      ctLargeType.SelAttribute.Items = vitems.list
 
       ctLargeType.SelAttribute.Loading = false
     }
@@ -131,8 +120,18 @@ export default class ContractTypeSmallSaveVM extends ModelBase {
       selAttribute: new SelAttribute({
         multiple: true,
         cacheItem: true,
-        itemText: 'ctProDepartment',
-        itemValue: 'id'
+        items: [
+          {
+            text: '1',
+            value: '11'
+          },
+          {
+            text: '2',
+            value: '22'
+          }
+        ]
+        // itemText: 'ctProDepartment',
+        // itemValue: 'id'
       }),
       required: true
     })
@@ -171,6 +170,10 @@ export default class ContractTypeSmallSaveVM extends ModelBase {
       })
     })
     // #endregion memo 备注
+    this.ctCode = new Property({
+      name: 'ctCode',
+      type: ConstValidate.ICON
+    })
     // #endregion 对象属性初始化
   }
 }

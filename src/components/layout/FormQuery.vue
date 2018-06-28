@@ -234,7 +234,7 @@ export default {
         })
       }
       this.$router.push(
-        `${this.queryModel.dialogSaveVM}/${
+        `${this.$router.currentRoute.path}/update/${
           this.tbSelected[0][this.queryModel.queryTable.key]
         }`
       )

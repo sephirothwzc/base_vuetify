@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-26 13:22:14
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-26 14:24:30
+ * @Last Modified time: 2018-06-27 19:30:24
  * 收件查询
  */
 import ModelBase from '../../../../base-helper/model-base'
@@ -23,6 +23,8 @@ export default class ReceiveContractQueryVM extends ModelBase {
     super(function() {
       return new RestfulReceiveContract()
     })
+    // 跳转新增修改
+    this.dialogSaveVM = '/ar/receive-contract-save'
     // #region ctCode 合同编码
     this.ctCode = new Property({
       name: 'ctCode'

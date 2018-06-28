@@ -11,7 +11,7 @@ import jslinq from 'jslinq'
 export default {
   methods: {
     refashBre(path) {
-      if (!(path instanceof String)) return path
+      if (path.length === 0) return path
       return jslinq(path.split('/'))
         .where(p => p !== '')
         .select(p => this.$t(p))

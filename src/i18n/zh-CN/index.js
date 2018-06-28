@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 12:19:40
+ * @Last Modified by: 武彩平
+ * @Last Modified time: 2018-06-28 13:31:48
  */
 export default {
   // region 主页
@@ -46,6 +46,7 @@ export default {
   'receive-contract': '收件',
   'loan-contract': '借阅',
   'element': '合同要素',
+  'archives-contract': '归档',
   // endregion navigation
   // model base
   lastUpdate: '最后修改时间',
@@ -81,6 +82,9 @@ export default {
   lastLoanDate: '借阅时间',
   lastPlanReturnDate: '预计归还日期',
   lastLoanTime: '借阅时长',
+  lastArchivesUserName: '归档人',
+  lastArchivesDate: '归档时间',
+  documentType: '文档类型',
   // #endregion ReceiveContract
   // #region element
   elementCode: '编码',

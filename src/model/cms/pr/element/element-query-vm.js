@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-28 10:31:47
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 10:49:45
+ * @Last Modified time: 2018-06-28 13:36:05
  * 合同要素查询
  */
 import Property from '../../../property'
@@ -25,8 +25,6 @@ export default class ElementQueryVM extends ModelBase {
     super(function() {
       return new RestfulElement()
     })
-    // 跳转新增修改
-    this.dialogSaveVM = '/pr/element-save'
     // #region elementCode 编码
     this.elementCode = new Property({
       name: 'elementCode'

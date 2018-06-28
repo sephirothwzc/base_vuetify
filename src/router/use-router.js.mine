@@ -1,13 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-05-30 15:30:49
-<<<<<<< .mine
  * @Last Modified by: 吴占超
  * @Last Modified time: 2018-06-28 13:26:11
-=======
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-28 13:25:07
->>>>>>> .r700
  * 导航数据源
  */
 import Main from '../components/layout/Main'
@@ -72,33 +67,11 @@ const useRouter = [
     children: [
       {
         path: 'receive-contract',
-        component: () =>
-          import('../components/cms/ar/receive-contract/ReceiveContractQuery')
-      },
-      {
-        path: 'receive-contract/add',
-        component: () =>
-          import('../components/cms/ar/receive-contract/ReceiveContractSave')
+        component: () => import('../components/cms/ar/receive-contract/ReceiveContractQuery')
       },
       {
         path: 'loan-contract',
-        component: () =>
-          import('../components/cms/ar/loan-contract/LoanContractQuery')
-      },
-      {
-        path: 'loan-contract/add',
-        component: () =>
-          import('../components/cms/ar/loan-contract/LoanContractSave')
-      },
-      {
-        path: 'loan-contract/update/:id',
-        component: () =>
-          import('../components/cms/ar/loan-contract/LoanContractSave')
-      },
-      {
-        path: 'archives-contract/',
-        component: () =>
-          import('../components/cms/ar/archives-contract/ArchivesContractQuery')
+        component: () => import('../components/cms/ar/loan-contract/LoanContractQuery')
       }
     ]
   }

@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 12:14:43
+ * @Last Modified time: 2018-06-28 13:30:12
  * mock layout
  */
 
@@ -13,50 +13,6 @@ import Mock from 'mockjs'
  */
 Mock.mock('/layout/navigation', 'get', param => {
   let data = [
-    {
-      id: 1,
-      title: '数据字典',
-      patch: '/data-dictionary',
-      icon: 'perm_data_setting',
-      children: [
-        {
-          id: 2,
-          pid: 1,
-          title: '字典管理',
-          patch: 'dictionary-manager',
-          icon: 'assignment'
-        },
-        {
-          id: 3,
-          pid: 1,
-          title: '新增字典',
-          patch: 'dictionary-save',
-          icon: 'picture_in_picture'
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: '系统用户',
-      patch: '/sys-user',
-      icon: 'assignment_ind',
-      children: [
-        {
-          id: 5,
-          pid: 4,
-          title: '用户管理',
-          patch: 'user-manager',
-          icon: 'perm_contact_calendar'
-        },
-        {
-          id: 6,
-          pid: 4,
-          title: '新增用户',
-          patch: 'user-save',
-          icon: 'perm_identity'
-        }
-      ]
-    },
     {
       id: 7,
       patch: 'pr',
@@ -85,8 +41,7 @@ Mock.mock('/layout/navigation', 'get', param => {
         {
           id: 10,
           pid: 7,
-          name: 'ContractTypeSmallQuery',
-          patch: 'contract-type-small-query',
+          patch: 'contract-type-small',
           icon: 'perm_identity'
         },
         // {
@@ -99,35 +54,42 @@ Mock.mock('/layout/navigation', 'get', param => {
         {
           id: 12,
           pid: 7,
-          patch: 'term-type-query',
+          patch: 'term-type',
           icon: 'perm_identity'
         },
         {
           id: 13,
           pid: 7,
-          patch: 'element-query',
+          patch: 'element',
           icon: 'chrome_reader_mode'
         }
       ]
     },
     {
       id: 13,
-      name: 'AR',
-      patch: '/ar',
+      patch: 'ar',
       icon: 'assignment_ind',
       children: [
         {
           id: 14,
           pid: 13,
           title: '收件查询',
-          patch: 'receive-contract-query',
+          patch: 'receive-contract',
           icon: 'perm_identity'
         },
         {
           id: 15,
           pid: 13,
           title: '借阅查询',
-          patch: 'loan-contract-query',
+          patch: 'loan-contract',
+          icon: 'perm_identity'
+        },
+        {
+          id: 16,
+          pid: 13,
+          title: '档案归档',
+          name: 'ArchivesContractQuery',
+          patch: 'archives-contract-query',
           icon: 'perm_identity'
         }
       ]

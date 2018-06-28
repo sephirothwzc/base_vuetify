@@ -2,7 +2,7 @@
  * @Author: 武彩平
  * @Date: 2018-06-23 11:47:02
  * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-25 20:51:47
+ * @Last Modified time: 2018-06-27 13:33:20
  */
 
 import ModelBase from '../../../../base-helper/model-base'
@@ -25,6 +25,8 @@ export default class TermTypeQueryVM extends ModelBase {
     super(function() {
       return new RestfulTermType()
     })
+    // 跳转新增修改
+    this.dialogSaveVM = '/pr/term-type-save'
     // #region 对象属性初始化
     // #region termTypeCode 条款类型编号
     this.termTypeCode = new Property({

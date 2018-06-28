@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-22 11:50:53
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 11:20:04
+ * @Last Modified time: 2018-06-28 13:35:40
  * 合同大类查询
  */
 import Property from '../../../property'
@@ -26,8 +26,6 @@ export default class ContractTypeLargeQueryVM extends ModelBase {
     super(function() {
       return new RestfulContractTypeLarge()
     })
-    // 跳转新增修改
-    this.dialogSaveVM = '/pr/contract-type-large-save'
     // #region ctTypeCode 合同类型编码
     this.ctTypeCode = new Property({
       name: 'ctTypeCode'
