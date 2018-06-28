@@ -2,126 +2,75 @@
  * @Author: 吴占超
  * @Date: 2018-05-30 15:30:49
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 11:19:18
+ * @Last Modified time: 2018-06-28 12:14:13
  * 导航数据源
  */
 import Main from '../components/layout/Main'
 
 const useRouter = [
   {
-    path: '/data-dictionary',
-    name: 'DataDictionary',
+    path: 'pr',
     component: Main,
     children: [
       {
-        path: 'dictionary-manager',
-        name: 'DataDictionaryManager',
-        component: () =>
-          import('../components/use-modules/data-dictionary/DataDictionaryManager')
-      },
-      {
-        path: 'dictionary-save',
-        name: 'DataDictionarySave',
-        component: () =>
-          import('../components/use-modules/data-dictionary/DataDictionarySave')
-      }
-    ]
-  },
-  {
-    path: '/sys-user',
-    name: 'SysUser',
-    component: Main,
-    children: [
-      {
-        path: 'user-manager',
-        name: 'UserManager',
-        component: () =>
-          import('../components/use-modules/sys-user/UserManager')
-      },
-      {
-        path: 'user-save',
-        name: 'UserSave',
-        component: () => import('../components/use-modules/sys-user/UserSave')
-      }
-    ]
-  },
-  {
-    path: '/pr',
-    name: 'PR',
-    component: Main,
-    children: [
-      {
-        path: 'contract-type-large-save',
-        name: 'ContractTypeLargeSave',
+        path: 'contract-type-large/add',
         component: () =>
           import('../components/cms/pr/contract-type-large/ContractTypeLargeSave')
       },
       {
-        path: 'contract-type-large-save/:id',
-        name: 'ContractTypeLargePut',
+        path: 'contract-type-large/update/:id',
         component: () =>
           import('../components/cms/pr/contract-type-large/ContractTypeLargeSave')
       },
       {
-        path: 'contract-type-small-save',
-        name: 'ContractTypeSmallSave',
+        path: 'contract-type-small/add',
         component: () =>
           import('../components/cms/pr/contract-type-small/ContractTypeSmallSave')
       },
       {
-        path: 'contract-type-large-query',
-        name: 'ContractTypeLargeQuery',
+        path: 'contract-type-large',
         component: () =>
           import('../components/cms/pr/contract-type-large/ContractTypeLargeQuery')
       },
       {
-        path: 'contract-type-small-save/:id',
-        name: 'ContractTypeSmallPut',
+        path: 'contract-type-small/update/:id',
         component: () =>
           import('../components/cms/pr/contract-type-small/ContractTypeSmallSave')
       },
       {
-        path: 'contract-type-small-query/',
-        name: 'ContractTypeSmallQuery',
+        path: 'contract-type-small',
         component: () =>
           import('../components/cms/pr/contract-type-small/ContractTypeSmallQuery')
       },
       {
-        path: 'term-type-save/',
-        name: 'TermTypeSave',
+        path: 'term-type/add',
         component: () => import('../components/cms/pr/term-type/TermTypeSave')
       },
       {
-        path: 'term-type-save/:id',
-        name: 'TermTypePut',
+        path: 'term-type/update/:id',
         component: () => import('../components/cms/pr/term-type/TermTypeSave')
       },
       {
-        path: 'term-type-query/',
-        name: 'TermTypeQuery',
+        path: 'term-type',
         component: () => import('../components/cms/pr/term-type/TermTypeQuery')
       },
       {
         // 合同要素查询
-        path: 'element-query',
-        name: 'ElementQuery',
+        path: 'element',
         component: () => import('../components/cms/pr/element/ElementQuery')
       }
     ]
   },
   {
     path: '/ar',
-    name: 'AR',
     component: Main,
     children: [
       {
-        path: 'receive-contract-query/',
-        name: 'ReceiveContractQuery',
+        path: 'receive-contract',
         component: () => import('../components/cms/ar/receive-contract/ReceiveContractQuery')
       },
       {
-        path: 'loan-contract-query/',
-        name: 'LoanContractQuery',
+        path: 'loan-contract',
         component: () => import('../components/cms/ar/loan-contract/LoanContractQuery')
       }
     ]

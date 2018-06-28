@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 10:55:47
+ * @Last Modified time: 2018-06-28 12:19:40
  */
 export default {
   // region 主页
@@ -38,23 +38,14 @@ export default {
   updCheckError: '请至少选择一行数据进行修改！',
   // endregion common
   // region navigation
-  DataDictionary: '数据字典',
-  DataDictionaryManager: '字典管理',
-  DataDictionarySave: '新增字典',
-  SysUser: '系统用户',
-  UserManager: '用户管理',
-  UserSave: '新增用户',
-  PR: '合同准备',
-  ContractTypeLargeSave: '合同大类创建',
-  ContractTypeLargeQuery: '合同大类查询',
-  ContractTypeSmallSave: '合同小类创建',
-  ContractTypeSmallQuery: '合同小类查询',
-  TermTypeSave: '条款类型创建',
-  TermTypeQuery: '条款类型查询',
-  AR: '合同档案',
-  ReceiveContractQuery: '收件查询',
-  LoanContractQuery: '借阅查询',
-  ElementQuery: '合同要素',
+  pr: '合同准备',
+  'contract-type-large': '合同大类',
+  'contract-type-small': '合同小类',
+  'term-type': '条款类型',
+  'ar': '合同档案',
+  'receive-contract': '收件',
+  'loan-contract': '借阅',
+  'element': '合同要素',
   // endregion navigation
   // model base
   lastUpdate: '最后修改时间',

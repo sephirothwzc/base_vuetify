@@ -13,16 +13,16 @@
       <v-list-group v-for="item in navItems" v-model="item.active" :key="item.id" :prepend-icon="item.icon" no-action>
         <v-list-tile slot="activator">
           <v-list-tile-content>
-            <v-list-tile-title v-text="$t(item.name)"></v-list-tile-title>
+            <v-list-tile-title v-text="$t(item.patch)"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- <v-list-tile v-for="(citem, i) in item.children" :key="i" @click="listTitleClick(item, citem)"> -->
-        <v-list-tile v-for="(citem, i) in item.children" :key="i" :to="`${item.patch}/${citem.patch}`" @click="routerHelper">
+        <v-list-tile v-for="(citem, i) in item.children" :key="i" :to="`/${item.patch}/${citem.patch}`" @click="routerHelper">
           <v-list-tile-action>
             <v-icon v-html="citem.icon"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="$t(citem.name)"></v-list-tile-title>
+            <v-list-tile-title v-text="$t(citem.patch)"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list-group>

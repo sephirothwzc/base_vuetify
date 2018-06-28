@@ -220,7 +220,8 @@ export default {
      * 新增弹出按钮
      */
     btnAddClick() {
-      this.$router.push(this.queryModel.dialogSaveVM)
+      // this.$router.push(this.queryModel.dialogSaveVM)
+      this.$router.push(`${this.$router.currentRoute.path}/add`)
     },
     /**
      * 修改弹出按钮

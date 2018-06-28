@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 11:22:24
+ * @Last Modified time: 2018-06-28 12:14:43
  * mock layout
  */
 
@@ -15,7 +15,6 @@ Mock.mock('/layout/navigation', 'get', param => {
   let data = [
     {
       id: 1,
-      name: 'DataDictionary',
       title: '数据字典',
       patch: '/data-dictionary',
       icon: 'perm_data_setting',
@@ -24,7 +23,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 2,
           pid: 1,
           title: '字典管理',
-          name: 'DataDictionaryManager',
           patch: 'dictionary-manager',
           icon: 'assignment'
         },
@@ -32,7 +30,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 3,
           pid: 1,
           title: '新增字典',
-          name: 'DataDictionarySave',
           patch: 'dictionary-save',
           icon: 'picture_in_picture'
         }
@@ -40,7 +37,6 @@ Mock.mock('/layout/navigation', 'get', param => {
     },
     {
       id: 4,
-      name: 'SysUser',
       title: '系统用户',
       patch: '/sys-user',
       icon: 'assignment_ind',
@@ -49,7 +45,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 5,
           pid: 4,
           title: '用户管理',
-          name: 'UserManager',
           patch: 'user-manager',
           icon: 'perm_contact_calendar'
         },
@@ -57,7 +52,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 6,
           pid: 4,
           title: '新增用户',
-          name: 'UserSave',
           patch: 'user-save',
           icon: 'perm_identity'
         }
@@ -65,8 +59,7 @@ Mock.mock('/layout/navigation', 'get', param => {
     },
     {
       id: 7,
-      name: 'PR',
-      patch: '/pr',
+      patch: 'pr',
       icon: 'assignment_ind',
       children: [
         // {
@@ -79,8 +72,7 @@ Mock.mock('/layout/navigation', 'get', param => {
         {
           id: 10,
           pid: 7,
-          name: 'ContractTypeLargeQuery',
-          patch: 'contract-type-large-query',
+          patch: 'contract-type-large',
           icon: 'perm_identity'
         },
         // {
@@ -107,14 +99,12 @@ Mock.mock('/layout/navigation', 'get', param => {
         {
           id: 12,
           pid: 7,
-          name: 'TermTypeQuery',
           patch: 'term-type-query',
           icon: 'perm_identity'
         },
         {
           id: 13,
           pid: 7,
-          name: 'ElementQuery',
           patch: 'element-query',
           icon: 'chrome_reader_mode'
         }
@@ -130,7 +120,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 14,
           pid: 13,
           title: '收件查询',
-          name: 'ReceiveContractQuery',
           patch: 'receive-contract-query',
           icon: 'perm_identity'
         },
@@ -138,7 +127,6 @@ Mock.mock('/layout/navigation', 'get', param => {
           id: 15,
           pid: 13,
           title: '借阅查询',
-          name: 'LoanContractQuery',
           patch: 'loan-contract-query',
           icon: 'perm_identity'
         }
