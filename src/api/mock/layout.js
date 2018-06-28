@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-01 23:35:22
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-27 10:02:30
+ * @Last Modified time: 2018-06-28 11:22:24
  * mock layout
  */
 
@@ -110,6 +110,13 @@ Mock.mock('/layout/navigation', 'get', param => {
           name: 'TermTypeQuery',
           patch: 'term-type-query',
           icon: 'perm_identity'
+        },
+        {
+          id: 13,
+          pid: 7,
+          name: 'ElementQuery',
+          patch: 'element-query',
+          icon: 'chrome_reader_mode'
         }
       ]
     },

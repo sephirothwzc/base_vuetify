@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-05-30 15:30:49
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-27 08:55:40
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-28 11:19:18
  * 导航数据源
  */
 import Main from '../components/layout/Main'
@@ -100,6 +100,12 @@ const useRouter = [
         path: 'term-type-query/',
         name: 'TermTypeQuery',
         component: () => import('../components/cms/pr/term-type/TermTypeQuery')
+      },
+      {
+        // 合同要素查询
+        path: 'element-query',
+        name: 'ElementQuery',
+        component: () => import('../components/cms/pr/element/ElementQuery')
       }
     ]
   },

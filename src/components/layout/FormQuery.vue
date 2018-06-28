@@ -195,7 +195,12 @@ export default {
       // 获取分页参数
       // const { sortBy, descending, page, rowsPerPage } = this.pagination
       let pageParam = {}
-      Object.assign(pageParam, this.queryObject, this.pagination)
+      Object.assign(pageParam, this.queryObject, {
+        page: this.pagination.page,
+        size: this.pagination.rowsPerPage,
+        descending: this.pagination.descending,
+        sortBy: this.pagination.sortBy
+      })
       this.queryModel.RestfulApi.get(pageParam)
         .then(resoult => {
           this.desserts = resoult.list

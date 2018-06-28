@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-27 09:14:48
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-28 10:55:47
  */
 export default {
   // region 主页
@@ -54,6 +54,7 @@ export default {
   AR: '合同档案',
   ReceiveContractQuery: '收件查询',
   LoanContractQuery: '借阅查询',
+  ElementQuery: '合同要素',
   // endregion navigation
   // model base
   lastUpdate: '最后修改时间',
@@ -90,6 +91,11 @@ export default {
   lastPlanReturnDate: '预计归还日期',
   lastLoanTime: '借阅时长',
   // #endregion ReceiveContract
+  // #region element
+  elementCode: '编码',
+  elementName: '名称',
+  elementLabel: '标签',
+  // #endregion element
   // #region validate
   required: '必填项',
   maxLength: '长度超出'

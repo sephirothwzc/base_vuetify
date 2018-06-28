@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-21 10:31:57
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-27 08:52:57
+ * @Last Modified time: 2018-06-27 19:42:02
  * 合同大类 save
  */
 import Property from '../../../property'
@@ -36,16 +36,8 @@ export default class ContractTypeLargeSaveVM extends ModelBase {
     this.ctTypeCode = new Property({
       name: 'ctTypeCode',
       rules: [
-        v =>
-          !!v ||
-          `${window.vm.$t('ctTypeCode')}-${window.vm.$t(
-            ConstValidate.REQUIRED
-          )}`,
-        v =>
-          (v && v.length <= 20) ||
-          `${window.vm.$t('ctTypeCode')}-${window.vm.$t(
-            ConstValidate.MAXLENGTH
-          )}`
+        v => !!v || `${window.vm.$t('ctTypeCode')}-${window.vm.$t(ConstValidate.REQUIRED)}`,
+        v => (v && v.length <= 20) || `${window.vm.$t('ctTypeCode')}-${window.vm.$t(ConstValidate.MAXLENGTH)}`
       ],
       required: true,
       textAttribute: new TextAttribute({

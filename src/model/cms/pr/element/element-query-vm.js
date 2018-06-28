@@ -1,48 +1,47 @@
 /*
  * @Author: 吴占超
- * @Date: 2018-06-22 11:50:53
+ * @Date: 2018-06-28 10:31:47
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 11:20:04
- * 合同大类查询
+ * @Last Modified time: 2018-06-28 10:49:45
+ * 合同要素查询
  */
 import Property from '../../../property'
 import ModelBase from '../../../../base-helper/model-base'
-import RestfulContractTypeLarge from '../../../../api/restful/cms/pr/contract-type-large/restful-contract-type-large'
 import { ConstFormType } from '../../../const-name'
 import QueryTable from '../../../query-table'
 import TableColumn from '../../../table-column'
 import SelAttribute from '../../../attribute/sel-attribute'
-// import LargeContractTypeSave from '../../../../components/cms/pr/large-contract-type/LargeContractTypeSave'
+import RestfulElement from '../../../../api/restful/cms/pr/element/element'
 
 /**
- * 合同大类查询
+ * 合同要素查询
  *
  * @export
- * @class LargeContractTypeQueryVM
+ * @class ElementQueryVM
  * @extends {ModelBase}
  */
-export default class ContractTypeLargeQueryVM extends ModelBase {
+export default class ElementQueryVM extends ModelBase {
   constructor() {
     super(function() {
-      return new RestfulContractTypeLarge()
+      return new RestfulElement()
     })
     // 跳转新增修改
-    this.dialogSaveVM = '/pr/contract-type-large-save'
-    // #region ctTypeCode 合同类型编码
-    this.ctTypeCode = new Property({
-      name: 'ctTypeCode'
+    this.dialogSaveVM = '/pr/element-save'
+    // #region elementCode 编码
+    this.elementCode = new Property({
+      name: 'elementCode'
     })
-    // #endregion ctTypeCode 合同类型编码
-    // #region ctTypeName 合同类别名称
-    this.ctTypeName = new Property({
-      name: 'ctTypeName'
+    // #endregion elementCode 编码
+    // #region elementName 名称
+    this.elementName = new Property({
+      name: 'elementName'
     })
-    // #endregion ctTypeName 合同名称
-    // #region shortName 简码
-    this.shortName = new Property({
-      name: 'shortName'
+    // #endregion elementName 名称
+    // #region elementLabel 标签
+    this.elementLabel = new Property({
+      name: 'elementLabel'
     })
-    // #endregion shortName 简码
+    // #endregion elementLabel 标签
     // #region enableFlag 是否有效
     this.enableFlag = new Property({
       name: 'enableFlag',
@@ -63,20 +62,20 @@ export default class ContractTypeLargeQueryVM extends ModelBase {
     // #endregion enableFlag 是否有效
     // #region queryTable
     this.queryTable = new QueryTable({
-      key: 'ctTypeId',
+      key: 'elementId',
       headers: [
         new TableColumn({
-          title: window.vm.$t('ctTypeCode'),
+          title: window.vm.$t('elementCode'),
           align: 'center',
-          field: 'ctTypeCode'
+          field: 'elementCode'
         }), new TableColumn({
-          title: window.vm.$t('ctTypeName'),
+          title: window.vm.$t('elementName'),
           align: 'center',
-          field: 'ctTypeName'
+          field: 'elementName'
         }), new TableColumn({
-          title: window.vm.$t('shortName'),
+          title: window.vm.$t('elementLabel'),
           align: 'center',
-          field: 'shortName'
+          field: 'elementLabel'
         }), new TableColumn({
           title: window.vm.$t('enableFlag'),
           align: 'center',
