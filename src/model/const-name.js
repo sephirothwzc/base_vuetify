@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-04 16:28:40
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-07 22:10:49
+ * @Last Modified time: 2018-06-28 16:08:29
  * model 常量字符串
  */
 
@@ -33,7 +33,11 @@ export const ConstFormType = {
   /**
    * v-switch
    */
-  SWITCH: 'switch'
+  SWITCH: 'switch',
+  /**
+   * contractSearch vue dialog
+   */
+  CONTRACTSEARCH: 'contractSearch'
 }
 /**
  * validate 验证i18n提示关键字

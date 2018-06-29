@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm6 lg4 xl3 v-for="property in propertyFilter" :key="property.Name">
           <template v-if="property.Type === constFormType.TEXT">
-            <v-text-field :prefix="property.textAttribute.Prefix" :counter="property.textAttribute.Counter" :clearable="property.textAttribute.Clearable" :box="property.textAttribute.Box" :mask="property.textAttribute.Mask" v-model="formObject[property.Name]" :rules="property.Rules" :label="$t(property.Name)" :required="property.Required" :textarea="property.textAttribute.textarea"></v-text-field>
+            <v-text-field :disabled="property.readonly"  :prefix="property.textAttribute.Prefix" :counter="property.textAttribute.Counter" :clearable="property.textAttribute.Clearable" :box="property.textAttribute.Box" :mask="property.textAttribute.Mask" v-model="formObject[property.Name]" :rules="property.Rules" :label="$t(property.Name)" :required="property.Required" :textarea="property.textAttribute.textarea"></v-text-field>
           </template>
 
           <template v-if="property.Type === constFormType.DATE">

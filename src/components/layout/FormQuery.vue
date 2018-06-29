@@ -27,6 +27,20 @@
             <template v-if="property.Type === constFormType.SWITCH">
               <v-switch :label="`${$t(property.Name)}: ${$t(queryObject[property.Name]?'true':'false')}`" v-model="queryObject[property.Name]"></v-switch>
             </template>
+
+            <template v-if="property.Type === constFormType.CONTRACTSEARCH">
+              <v-layout row>
+                <v-flex xs10>
+                  <v-text-field :readonly="true" :clearable="true" v-model="queryObject[property.Name]" :rules="property.Rules" :label="$t(property.Name)" :required="property.Required">
+                  </v-text-field>
+                </v-flex>
+                <v-flex xs2>
+                  <v-btn flat icon @click="btnCTClick">
+                    <v-icon>search</v-icon>
+                  </v-btn>
+                </v-flex>
+              </v-layout>
+            </template>
           </v-flex>
         </v-layout>
         <v-layout row wrap>
@@ -239,7 +253,16 @@ export default {
         }`
       )
     },
-    btnExcelToClick() {}
+    /**
+     * 导出按钮点击事件
+     */
+    btnExcelToClick() {},
+    /**
+     * 合同查询
+     */
+    btnCTClick() {
+      Dialog.contractSearch()
+    }
   },
   watch: {
     pagination: {

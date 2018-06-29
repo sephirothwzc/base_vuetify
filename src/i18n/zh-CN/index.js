@@ -1,8 +1,8 @@
 /*
  * @Author: 吴占超
  * @Date: 2018-04-26 13:30:38
- * @Last Modified by: 武彩平
- * @Last Modified time: 2018-06-28 13:31:48
+ * @Last Modified by: 吴占超
+ * @Last Modified time: 2018-06-29 10:21:19
  */
 export default {
   // region 主页
@@ -35,7 +35,9 @@ export default {
   add: '新增',
   update: '修改',
   excelTo: '导出',
+  vagueSearch: '模糊查询',
   updCheckError: '请至少选择一行数据进行修改！',
+  searchError: '请至少选择一行数据！',
   // endregion common
   // region navigation
   pr: '合同准备',

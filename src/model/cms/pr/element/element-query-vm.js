@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-28 10:31:47
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-28 13:36:05
+ * @Last Modified time: 2018-06-28 16:21:38
  * 合同要素查询
  */
 import Property from '../../../property'
@@ -27,7 +27,8 @@ export default class ElementQueryVM extends ModelBase {
     })
     // #region elementCode 编码
     this.elementCode = new Property({
-      name: 'elementCode'
+      name: 'elementCode',
+      type: ConstFormType.CONTRACTSEARCH
     })
     // #endregion elementCode 编码
     // #region elementName 名称

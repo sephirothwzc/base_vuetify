@@ -2,7 +2,7 @@
  * @Author: 吴占超
  * @Date: 2018-06-05 13:16:31
  * @Last Modified by: 吴占超
- * @Last Modified time: 2018-06-21 15:34:03
+ * @Last Modified time: 2018-06-28 13:49:57
  * 文本框扩展属性
  */
 import jslinq from 'jslinq'
@@ -67,7 +67,6 @@ export default class TextAttribute {
     box = false,
     clearable = false,
     counter = 50,
-    disabled = false,
     mask = undefined,
     prefix = undefined,
     textarea = undefined
@@ -75,7 +74,6 @@ export default class TextAttribute {
     this.box = !box ? false : box
     this.clearable = !clearable ? false : clearable
     this.counter = counter
-    this.disabled = disabled
     if (!!mask && !jslinq(Object.getOwnPropertyNames(constMask)).where(p => constMask[p] === mask).firstOrDefault()) {
       throw new Error('wzc-TextAttribute-mask: mask must TextAttribute.CONST_MASK property!')
     }
@@ -106,12 +104,6 @@ export default class TextAttribute {
    */
   get Counter() {
     return this.counter
-  }
-  /**
-   * 是否可用
-   */
-  get Disabled() {
-    return this.disabled
   }
   /**
    * 显示格式
